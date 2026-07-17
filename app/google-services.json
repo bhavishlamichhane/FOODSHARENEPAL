@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1067789376131",
+    "firebase_url": "https://foodsharenepal-default-rtdb.firebaseio.com",
+    "project_id": "foodsharenepal",
+    "storage_bucket": "foodsharenepal.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067789376131:android:013237293c3abcbad5d9b6",
+        "android_client_info": {
+          "package_name": "com.example.foodsharenepal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKbbkvNVj-H5I-KzwOIrKz5_E6JN4cgqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
