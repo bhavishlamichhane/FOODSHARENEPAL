@@ -41,9 +41,10 @@ class FoodRepository {
                 }
 
                 onResult(foods)
-
             }
-
+            .addOnFailureListener {
+                onResult(emptyList())
+            }
     }
 
     fun updateFood(
@@ -59,7 +60,6 @@ class FoodRepository {
             .addOnFailureListener {
                 onResult(false)
             }
-
     }
 
     fun deleteFood(
@@ -75,8 +75,8 @@ class FoodRepository {
             .addOnFailureListener {
                 onResult(false)
             }
-
     }
+
     fun getFoodById(
         id: String,
         onResult: (Food?) -> Unit
@@ -84,32 +84,11 @@ class FoodRepository {
 
         foodCollection.document(id)
             .get()
-            .addOnSuccessListener {
-
-                onResult(it.toObject(Food::class.java))
-
+            .addOnSuccessListener { document ->
+                onResult(document.toObject(Food::class.java))
             }
             .addOnFailureListener {
-
                 onResult(null)
-
             }
-
     }
-
-
-}
-fun deleteFood(
-    foodId: String,
-    onResult: (Boolean) -> Unit
-) {
-    db.collection("foods")
-        .document(foodId)
-        .delete()
-        .addOnSuccessListener {
-            onResult(true)
-        }
-        .addOnFailureListener {
-            onResult(false)
-        }
 }
